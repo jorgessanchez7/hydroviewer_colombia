@@ -4,16 +4,14 @@
 {% endblock %} 
 
 {% block header_buttons %}
-<div
-  class="header-button glyphicon-button"
-  data-bs-toggle="tooltip"
-  data-bs-placement="bottom"
-  title="About"
->
-  <a data-bs-toggle="modal" data-bs-target="#about"
-    ><i class="bi bi-info-square"></i></a>
+
+{% url "hydroviewer_colombia:home" as home %}
+<div class="header-button bi-button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Aplicación">
+  <a  href=" {{ home }}" ><span class="bi bi-arrow-return-left"></span></a>
 </div>
+
 {% endblock %}
+
 {% block app_navigation_items %} 
 
 {% url "hydroviewer_colombia:home" as home %} 
@@ -31,9 +29,9 @@
 </li> -->
 
 
-<li class="nav-item"><a href=" {{ home }}" class="{% if request.path == home %}nav-link active{% endif %}">Aplicación</a></li>
-<li class="nav-item"><a href="{{ user_manual }}" class="{% if request.path == user_manual %}nav-link active{% endif %}">Manual de Usuario</a></li>
-<li class="nav-item"><a href="{{ technical_manual }}" class="{% if request.path == technical_manual %}nav-link active{% endif %}">Manual Técnico</a></li>
+<li class="nav-item"><a href=" {{ home }}" class="nav-link {% if request.path == home %}active{% endif %}">Aplicación</a></li>
+<li class="nav-item"><a href="{{ user_manual }}" class="nav-link {% if request.path == user_manual %}active{% endif %}">Manual de Usuario</a></li>
+<li class="nav-item"><a href="{{ technical_manual }}" class="nav-link {% if request.path == technical_manual %}active{% endif %}">Manual Técnico</a></li>
 
 {% endblock %}
 

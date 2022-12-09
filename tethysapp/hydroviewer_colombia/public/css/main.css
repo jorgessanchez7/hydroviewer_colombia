@@ -15,6 +15,7 @@
   margin-left: 15px;
   width: 800px;
 }
+
 #app-content-wrapper #app-content {
   height: 100%;
   /*padding-top: 60px;*/
@@ -46,24 +47,63 @@
   height: 220px;
   margin: 0 auto;
 }
+
 .map-view-legend {
-  bottom: 50px;
+  position: absolute;
+
+  /*General*/
+  background: #3366cc;
+  color:      white;
+  /*border: 1px #ddd solid;*/
+  opacity: 0.2;
+
+  /* Dimensions */
+  max-height:    90%;
+  min-width:     250px;
+  width:         fit-content;
+  border-radius: 15px;
+
+  /*Internal dimensions*/
+  margin:  min(5px, 0.75%);
+  padding: min(5px, 0.75%);
+  bottom:  50px;
   /*right: 20px;*/
-  width: 150px;
-  max-height: 90%;
+  /*width: 150px;*/
+  
+  /*Others*/
   overflow-y: auto;
-  margin: 5px;
-  color: white;
-  background: #286090;
-  border: 1px #ddd solid;
   z-index: 999;
 }
+.map-view-legend:hover{
+  border: 1px #ddd solid;
+  opacity: 1.0;
+}
+
+/*Selected checkbox*/
+.selected-check-list{
+  padding-top:    min(2px, 2%);
+  padding-bottom: min(2px, 2%);
+}
+.selected-check-list > div{
+  padding-left: min(5px, 5%);
+  padding-right: min(5px, 2%);
+  display: flex;
+  justify-content: space-between;
+  opacity: 0.75;
+}
+.selected-check-list > div:hover{
+  opacity: 1.0;
+  background: #3e77ea;
+}
+
+
 .flex-container-row {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
 }
+
 #overview {
   font-size: 15pt;
   padding: 0 20px 0 20px;
@@ -84,6 +124,7 @@
 .logo-image img {
   max-width: 100%;
 }
+
 #about .modal-dialog {
   width: 75%;
   height: 75%;
